@@ -9,7 +9,7 @@ project_id = "ruby-stt"
 speech = Google::Cloud::Speech.new project: project_id
 
 # The name of the audio file to transcribe
-file_name = "audio-files/audo.amr"
+file_name = "audio-files/audio1.amr"
 
 # The audio file's encoding and sample rate
 audio = speech.audio file_name, encoding:    :amr,
@@ -19,7 +19,7 @@ audio = speech.audio file_name, encoding:    :amr,
 # Detects speech in the audio file
 results = audio.recognize
 
-saida = File.new("saida.md", "w")
+saida = File.new("audio1.md", "w")
 # Each result represents a consecutive portion of the audio
 results.each do |result|
   markdown = to_markdown(result.transcript)

@@ -7,7 +7,7 @@
   "iniciar sublinhado" => " <u>",
   "finalizar sublinhado" => "</u>",
   #-------------------------------------------------------------------------------------------
-  "pular linha" => "  ",
+  "pular linha" => "  \n",
   "ponto final" => ".",
   "vírgula" => ",",
   "ponto e vírgula" => ";"
@@ -29,7 +29,7 @@ def to_markdown(transcript)
     else
       resultado = resultado + " " + buffer
     end
-    puts resultado
+    # puts resultado
     buffer = ""
 
   end
