@@ -1,6 +1,6 @@
 # Imports the Google Cloud client library
 require "google/cloud/speech"
-require "dicionario.rb"
+require "./dicionario.rb"
 
 # Your Google Cloud Platform project ID
 project_id = "ruby-stt"
@@ -22,8 +22,9 @@ results = audio.recognize
 saida = File.new("saida.md", "w")
 # Each result represents a consecutive portion of the audio
 results.each do |result|
-  saida.puts("#{result.transcript}")
-  puts result.transcript
+  markdown = to_markdown(result.transcript)
+  saida.puts("#{markdown}")
+  puts markdown
 end
 
 saida.close
